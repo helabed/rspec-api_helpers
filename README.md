@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 This Gem expects you to have set your rspec to use Rake::Test helpers as described
-[here](https://gist.github.com/alex-zige/5795358) because it checks `last_response`
+[here](https://gist.github.com/helabed/c65084ab7938e437283f) because it checks `last_response`
 attributes.
 
 In your `rails_helper.rb` add in the top:
