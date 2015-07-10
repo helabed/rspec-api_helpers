@@ -7,7 +7,7 @@ module Rspec
         end
       end
 
-      def it_returns_attributes(resource, model, only: [], modifier: nil)
+      def it_returns_attributes(resource: resource, model: model, only: [], modifier: nil)
         it "expects returned resource to have the following model's attributes" do
           @api_resource = objectize_resource(last_response.body, root: resource)
 
@@ -46,7 +46,7 @@ module Rspec
         end
       end
 
-      def it_returns_resources(root, number)
+      def it_returns_resources(root: root, number: number)
         it 'returns the correct number of data in the body' do
           resources = objectize_resources(last_response.body, root: root)
           expect(resources.length).to eql(number)
