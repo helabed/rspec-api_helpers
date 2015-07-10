@@ -7,7 +7,7 @@ module Rspec
         end
       end
 
-      def it_returns_attributes(resource:, model:, only: [], modifier: nil)
+      def it_returns_attributes(resource, model, only: [], modifier: nil)
         it "expects returned resource to have the following model's attributes" do
           @api_resource = objectize_resource(last_response.body, root: resource)
 
@@ -46,10 +46,10 @@ module Rspec
         end
       end
 
-      def it_returns_resources(root:, number:)
+      def it_returns_resources(root, number)
         it 'returns the correct number of data in the body' do
-          users = objectize_resources(last_response.body, root: root)
-          expect(users.length).to eql(number)
+          resources = objectize_resources(last_response.body, root: root)
+          expect(resources.length).to eql(number)
         end
       end
       alias_method :it_returns_the_resources, :it_returns_resources
