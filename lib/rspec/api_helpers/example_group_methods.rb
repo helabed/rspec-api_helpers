@@ -47,7 +47,7 @@ module Rspec
       end
 
       def it_returns_resources(root: '', number: 0)
-        it 'returns the correct number of data in the body' do
+        it "returns the correct number of #{root} in the response body" do
           resources = objectize_resources(last_response.body, root: root)
           expect(resources.length).to eql(number)
         end
